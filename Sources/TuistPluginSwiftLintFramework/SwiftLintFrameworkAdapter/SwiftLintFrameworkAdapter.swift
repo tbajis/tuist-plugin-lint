@@ -87,7 +87,7 @@ public final class SwiftLintFrameworkAdapter: SwiftLintFrameworkAdapting {
         }
         
         return paths.flatMap {
-            configuration.lintableFiles(inPath: $0, forceExclude: false)
+            configuration.lintableFiles(inPath: $0, forceExclude: false, excludeBy: .paths(excludedPaths: []))
         }
     }
     
